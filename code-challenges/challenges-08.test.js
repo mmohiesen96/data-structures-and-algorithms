@@ -124,18 +124,14 @@ Return an array containing all the matches.
 ------------------------------------------------------------------------------------------------ */
 
 const isCapitalized = (str) => {
-  let strArr =str.split(' ');
-  let result = [];
-  result = strArr.filter(item => {
-    if (/^[A-Z]/g.test(item)) {
-      
-      item.replace(',' , '');
-      return item;
-    }
-  });
-  return result;
+  // Solution code here...
+  if(str.match(/\b[A-Z](\w)*/g)) {
+    return str.match(/\b[A-Z](\w)*/g);
+  }
+  else {
+    return [];
+  }
 };
-
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 6
 
@@ -143,7 +139,11 @@ Write a function named citiesAtoJ that takes in an array of city names and uses 
 ------------------------------------------------------------------------------------------------ */
 
 const citiesAtoJ = (arr) => {
-  // Solution code here...
+  return arr.filter(item => {
+    if (/^[A-J]/g.test(item)) {
+      return item;
+    }
+  });
 };
 
 /* ------------------------------------------------------------------------------------------------
